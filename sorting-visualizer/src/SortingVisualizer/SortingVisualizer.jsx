@@ -91,7 +91,7 @@ export default class SortingVisualizer extends React.Component {
 
     return (<>
       <div className='navbar'>
-        <button onClick={() => this.resetArray()}>Generate New Array</button>
+        <button onClick={() => this.resetArray()}>Test Generate New Array</button>
         <button onClick={() => this.mergeSort()}>Merge Sort</button>
         <button onClick={() => this.quickSort()}>Quick Sort</button>
         <button onClick={() => this.heapSort()}>Heap Sort</button>
