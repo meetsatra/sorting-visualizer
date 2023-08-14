@@ -27,8 +27,11 @@ export default class SortingVisualizer extends React.Component {
     for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
       // array.push(randomIntFromInterval(10, 700));
       array.push(Math.floor(Math.random() * (max - min + 1) + min));
+      setTimeout(() => {
+        this.setState({array, max});
+      }, 100);
     }
-    this.setState({array});
+    
   }
 
   mergeSort() {
@@ -97,15 +100,16 @@ export default class SortingVisualizer extends React.Component {
           Test Sorting Algorithms (BROKEN)
         </button>
       </div>
-      <div className="array-container">
+      
+      <div className="array-container" style={{height: `${this.state.max}px`}}>
         {array.map((value, idx) => (
-          <div
-            className="array-bar"
+          <div className="array-bar"
             key={idx}
             style={{
               backgroundColor: PRIMARY_COLOR,
               height: `${value}px`,
-            }}></div>
+            }}>
+          </div>
         ))}
         
       </div>
